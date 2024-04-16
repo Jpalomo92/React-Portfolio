@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import AboutMe from './components/AboutMe';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
@@ -10,17 +10,17 @@ import Footer from './components/Footer';
 
 
 function App() {
-  const [section, setSection] = useState('AboutMe');
+  const [selectedSection, setSlectedSection] = useState('AboutMe');
 
   return (
     <div>
       <Header />
-      <Navbar section={section} setSection={setSection} />
+      <Navbar section={selectedSection} setSection={setSlectedSection} />
       <div className="content">
-        {section === 'AboutMe' && <AboutMe />}
-        {section === 'Portfolio' && <Portfolio />}
-        {section === 'Contact' && <Contact />}
-        {section === 'Resume' && <Resume />}
+        {selectedSection === 'AboutMe' && <AboutMe />}
+        {selectedSection === 'Portfolio' && <Portfolio />}
+        {selectedSection === 'Contact' && <Contact />}
+        {selectedSection === 'Resume' && <Resume />}
       </div>
       <Footer />
     </div>
